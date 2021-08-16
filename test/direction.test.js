@@ -37,5 +37,5 @@ before(() => {
 
   it('Should revert back to original position due to grid exceeded error', () => {
     let result = direction.moveRobot('MOVE',[gridSize.x,gridSize.y,'N']);
-        expect(result).toEqual([gridSize.x,gridSize.y,'N']);
+    expect(result).toEqual([gridSize.x,gridSize.y,'N']);
   });
