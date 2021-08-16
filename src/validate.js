@@ -10,7 +10,7 @@ var errorMessageList = reference.errorMessage;
  */
 function isValidInputFormat(userInput){
     try {
-        let result = /^(PLACE\s\d+[\,]\d+[\,][N|E|S|W])$|^LEFT$|^RIGHT$|^MOVE$|^REPORT$/gm.test(userInput);
+        let result = /^(PLACE\s\d+[\,]\d+[\,](NORTH|EAST|SOUTH|WEST))$|^LEFT$|^RIGHT$|^MOVE$|^REPORT$/gm.test(userInput);
         if (!result) throw new Error(errorMessageList.invalidFormat);
     } catch (error) {
         throw new Error(error.message);
@@ -23,7 +23,7 @@ function isValidInputFormat(userInput){
  */
 function isValidPlaceRange(userInput){
     try {
-        if(/(PLACE\s\d+[\,]\d+[\,][N|E|S|W])/.test(userInput)){
+        if(/(PLACE\s\d+[\,]\d+[\,](NORTH|EAST|SOUTH|WEST))/.test(userInput)){
             let position = userInput.split(' ')[1].split(',');
             isInsideGrid(position);
         }

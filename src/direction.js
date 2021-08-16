@@ -34,10 +34,10 @@ function moveCommand(currentPosition){
         let face = currentPosition[2];
         let newPosition = currentPosition;
 
-        if(face.includes('N')) newPosition[1]++;
-        else if(face.includes('E')) newPosition[0]++;
-        else if(face.includes('S')) newPosition[1]--;
-        else if(face.includes('W')) newPosition[0]--;
+        if(face.includes('NORTH')) newPosition[1]++;
+        else if(face.includes('EAST')) newPosition[0]++;
+        else if(face.includes('SOUTH')) newPosition[1]--;
+        else if(face.includes('WEST')) newPosition[0]--;
 
         if(ifOffTheGrid(newPosition)) return resetGrid(currentPosition);
         return newPosition;
@@ -56,10 +56,10 @@ function leftCommand(currentPosition){
         let face = currentPosition[2];
         let newPosition = currentPosition;
 
-        if(face.includes('N')) newPosition[2] = 'W';
-        else if(face.includes('E')) newPosition[2] = 'N';
-        else if(face.includes('S')) newPosition[2] = 'E';
-        else if(face.includes('W')) newPosition[2] = 'S';
+        if(face.includes('NORTH')) newPosition[2] = 'WEST';
+        else if(face.includes('EAST')) newPosition[2] = 'NORTH';
+        else if(face.includes('SOUTH')) newPosition[2] = 'EAST';
+        else if(face.includes('WEST')) newPosition[2] = 'SOUTH';
 
         return newPosition;
     } catch (error) {
@@ -77,10 +77,10 @@ function rightCommand(currentPosition){
         let face = currentPosition[2];
         let newPosition = currentPosition;
 
-        if(face.includes('N')) newPosition[2] = 'E';
-        else if(face.includes('E')) newPosition[2] = 'S';
-        else if(face.includes('S')) newPosition[2] = 'W';
-        else if(face.includes('W')) newPosition[2] = 'N';
+        if(face.includes('NORTH')) newPosition[2] = 'EAST';
+        else if(face.includes('EAST')) newPosition[2] = 'SOUTH';
+        else if(face.includes('SOUTH')) newPosition[2] = 'WEST';
+        else if(face.includes('WEST')) newPosition[2] = 'NORTH';
 
         return newPosition;
     } catch (error) {
@@ -114,10 +114,10 @@ function resetGrid(currentPosition){
         let face = currentPosition[2];
         let newPosition = currentPosition;
 
-        if(face.includes('N')) newPosition[1]--;
-        else if(face.includes('E')) newPosition[0]--;
-        else if(face.includes('S')) newPosition[1]++;
-        else if(face.includes('W')) newPosition[0]++;
+        if(face.includes('NORTH')) newPosition[1]--;
+        else if(face.includes('EAST')) newPosition[0]--;
+        else if(face.includes('SOUTH')) newPosition[1]++;
+        else if(face.includes('WEST')) newPosition[0]++;
 
         if(ifOffTheGrid(newPosition)) return currentPosition;
         return newPosition;

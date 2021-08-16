@@ -5,7 +5,7 @@ let gridSize = {
 
 let errorMessage = {
     exceedGrid : 'The robot is on the edge of the grid. Change direction to avoid it from falling.',
-    invalidFormat : 'Invalid input format. Valid input are "MOVE", "LEFT", "RIGHT", "REPORT", "POSITION <x-grid>, <y-grid>, <N/E/S/W>"',
+    invalidFormat : 'Invalid input format. Valid input are "MOVE", "LEFT", "RIGHT", "REPORT", "PLACE <x-grid>, <y-grid>, <N/E/S/W>"',
     emptyLocation : 'Robot is not on the table. Please PLACE the robot to begin.'
 };
 
