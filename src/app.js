@@ -21,16 +21,18 @@ function inputListener(){
     try {
         let stdin = process.openStdin();
         let currentLocation;
-        stdin.addListener('data', function(input) {
-            input = input.toString();
-            if(validateInput(input, currentLocation)){
-                if(!input.split(' ')[0].toString().includes('REPORT')){
-                    currentLocation = direction.moveRobot(input, currentLocation);
+        stdin.addListener('data', function(userInput) {
+            inputList = userInput.toString().split('|');
+            inputList.forEach(input => {
+                if(validateInput(input, currentLocation)){
+                    if(!input.split(' ')[0].toString().includes('REPORT')){
+                        currentLocation = direction.moveRobot(input, currentLocation);
+                    }
+                    else{
+                        printLog.info(reference.infoMessage.currentPosition + currentLocation);
+                    }
                 }
-                else{
-                    printLog.info(reference.infoMessage.currentPosition + currentLocation);
-                }
-            }
+            });
         });
     } catch (error) {
         printLog.error(error.message);
