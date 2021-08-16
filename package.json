@@ -1,0 +1,22 @@
+{
+  "name": "robot-simulator",
+  "version": "1.0.0",
+  "description": "Robot Simulator",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./src/app.js",
+    "test": "mocha ./*/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/mthaqifisa/robot-simulator"
+  },
+  "author": "Muhammad Thaqif Isa",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "expect": "^27.0.6",
+    "lodash": "^4.17.21",
+    "mocha": "^9.0.3"
+  }
+}
