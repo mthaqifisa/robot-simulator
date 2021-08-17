@@ -32,8 +32,8 @@ Create an application that can read in commands of the following form:
 ## Constraints
 The robot must not fall off the table during movement. This also includes the initial placement of the robot. Any movement that would result in the robot falling from the table must be prevented. 
 
-- Bonus points
-For bonus points, implement a way for the robot to handle the case when commands are issued, but the robot is offline for 5 seconds.
+## Bonus points
+- For bonus points, implement a way for the robot to handle the case when commands are issued, but the robot is offline for 5 seconds.
 
 - For super bonus points, implement a way for the robot to handle more than one command issuer.
 
