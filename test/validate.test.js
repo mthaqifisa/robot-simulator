@@ -16,7 +16,7 @@ it('Should return an error of invalid input format', () => {
 
 it('Should return an error of grid value exceeded using PLACE command', () => {
   try {
-    validate.isValidPlaceRange('PLACE 6,6,N');
+    validate.isValidPlaceRange('PLACE 6,6,NORTH');
   } catch (err) {
     expect(err).toEqual(new Error(errorMessage.exceedGrid));
   }
@@ -24,7 +24,7 @@ it('Should return an error of grid value exceeded using PLACE command', () => {
 
 it('Should return an error of grid value exceeded', () => {
   try {
-    validate.isInsideGrid([6, 6, 'N']);
+    validate.isInsideGrid([6, 6, 'NORTH']);
   } catch (err) {
     expect(err).toEqual(new Error(errorMessage.exceedGrid));
   }
@@ -40,7 +40,7 @@ it('Should return an error of empty location', () => {
 
 it('Should not return an error of invalid input format', () => {
   try {
-    validate.isValidInputFormat('PLACE 0,0,N');
+    validate.isValidInputFormat('PLACE 0,0,NORTH');
   } catch (err) {
     expect(err).toBeFalsy(new Error(errorMessage.invalidFormat));
   }

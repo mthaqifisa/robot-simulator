@@ -12,7 +12,9 @@ function isValidInputFormat(userInput) {
   try {
     // eslint-disable-next-line max-len
     const result = /^(PLACE\s\d+[\,]\d+[\,](NORTH|EAST|SOUTH|WEST))$|^LEFT$|^RIGHT$|^MOVE$|^REPORT$/gm.test(userInput);
-    if (!result) throw new Error(errorMessageList.invalidFormat);
+    if (!result) {
+      throw new Error(errorMessageList.invalidFormat);
+    }
   } catch (error) {
     throw new Error(error.message);
   }

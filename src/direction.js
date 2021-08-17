@@ -47,9 +47,13 @@ function moveCommand(currentPosition) {
       newPosition[0]++;
     } else if (face.includes('SOUTH')) {
       newPosition[1]--;
-    } else if (face.includes('WEST')) newPosition[0]--;
+    } else if (face.includes('WEST')) {
+      newPosition[0]--;
+    }
 
-    if (ifOffTheGrid(newPosition)) return resetGrid(currentPosition);
+    if (ifOffTheGrid(newPosition)) {
+      return resetGrid(currentPosition);
+    }
     return newPosition;
   } catch (error) {
     throw new Error(error.message);
@@ -72,7 +76,9 @@ function leftCommand(currentPosition) {
       newPosition[2] = 'NORTH';
     } else if (face.includes('SOUTH')) {
       newPosition[2] = 'EAST';
-    } else if (face.includes('WEST')) newPosition[2] = 'SOUTH';
+    } else if (face.includes('WEST')) {
+      newPosition[2] = 'SOUTH';
+    }
 
     return newPosition;
   } catch (error) {
@@ -96,7 +102,9 @@ function rightCommand(currentPosition) {
       newPosition[2] = 'SOUTH';
     } else if (face.includes('SOUTH')) {
       newPosition[2] = 'WEST';
-    } else if (face.includes('WEST')) newPosition[2] = 'NORTH';
+    } else if (face.includes('WEST')) {
+      newPosition[2] = 'NORTH';
+    }
 
     return newPosition;
   } catch (error) {
@@ -136,9 +144,13 @@ function resetGrid(currentPosition) {
       newPosition[0]--;
     } else if (face.includes('SOUTH')) {
       newPosition[1]++;
-    } else if (face.includes('WEST')) newPosition[0]++;
+    } else if (face.includes('WEST')) {
+      newPosition[0]++;
+    }
 
-    if (ifOffTheGrid(newPosition)) return currentPosition;
+    if (ifOffTheGrid(newPosition)) {
+      return currentPosition;
+    }
     return newPosition;
   } catch (error) {
     throw new Error(error.message);
