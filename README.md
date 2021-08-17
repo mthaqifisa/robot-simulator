@@ -37,7 +37,7 @@ The robot must not fall off the table during movement. This also includes the in
 
 - For super bonus points, implement a way for the robot to handle more than one command issuer.
 
-### Example Input and Output
+## Example Input and Output
 Example 1 :
 ```cmd 
  PLACE 0,0,NORTH 
